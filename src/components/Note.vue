@@ -50,7 +50,10 @@
       Slide #: {{ slide }}<br>
       Sliding: {{ sliding }}
     </p>
-
+    <div>
+      <h4>租一椽町屋，且作几日京都猫</h4>
+      <p>some words here</p>
+    </div>
   </div>
 </template>
 <script>

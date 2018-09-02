@@ -16,8 +16,11 @@
   "dependencies": {
     "bootstrap-vue": "^2.0.0-rc.11",
     "eslint-plugin-html": "^4.0.5",
+    "iview": "^3.0.1",
     "vue": "^2.5.2",
+    "vue-blu": "^0.1.9",
     "vue-cute-timeline": "^1.2.5",
+    "vue-light-timeline": "^0.12.8",
     "vue-router": "^3.0.1"
   },
   "devDependencies": {
