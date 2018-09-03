@@ -5,10 +5,6 @@ import Card from '@/components/Card'
 import Note from '@/components/Note'
 import iViewTrack from '@/components/Track'
 
-import 'vue-blu/dist/css/vue-blu.min.css'
-import VueBlu from 'vue-blu'
-
-Vue.use(VueBlu)
 Vue.use(Router)
 
 export default new Router({
