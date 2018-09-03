@@ -4,28 +4,37 @@
             <Icon type="ios-trophy" slot="dot"></Icon>
             <span>发布里程碑版本</span>
         </TimelineItem>
-         <TimelineItem>
-            <p class="time">2018.9.2</p>
-            <p class="content">Hello, SriLanka</p>
+         <TimelineItem v-for="item in items" :key="item.id">
+            <p class="time">{{item.date}}</p>
+            <p class="content">{{item.content}}</p>
             <p><img src="https://pek3a.qingstor.com/warehouse1/c1.jpg" /></p>
-        </TimelineItem>
-        <TimelineItem>
-            <p class="time">2018.01</p>
-            <p class="content">Hello, HongKong</p>
-        </TimelineItem>
-        <TimelineItem>
-            <p class="time">2016.1</p>
-            <p class="content">Hello, Dali</p>
-        </TimelineItem>
-        <TimelineItem>
-            <p class="time">2015.1</p>
-            <p class="content">Hello, LiJiang</p>
         </TimelineItem>
     </Timeline>
 </template>
 <script>
 export default {
-
+  data () {
+    return {
+      items: [
+        {
+          date: '2018.9.2',
+          cotent: 'Hello, SriLanka'
+        },
+        {
+          date: '2018.01',
+          content: 'Hello, HongKong'
+        },
+        {
+          date: '2016.1',
+          content: 'Hello, Dali'
+        },
+        {
+          date: '2015.1',
+          content: 'Hello, LiJiang'
+        }
+      ]
+    }
+  }
 }
 </script>
 <style scoped>

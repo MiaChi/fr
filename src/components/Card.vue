@@ -1,11 +1,9 @@
 <template>
   <div>
-      <b-card-group columns>
-    <b-card no-body
+    <b-card-group columns>
+      <b-card no-body
         style="max-width: 20rem;"
-        img-src="https://placekitten.com/380/200"
-        img-alt="Image"
-        img-top>
+        >
       <h4 slot="header">旅行</h4>
         <b-card-body>
             <p class="card-text">
@@ -28,12 +26,10 @@
         <b-card-img src="https://placekitten.com/480/210"
                     alt="Image"
                     bottom></b-card-img>
-    </b-card>
+      </b-card>
     <b-card no-body
         style="max-width: 20rem;"
-        img-src="https://placekitten.com/380/199"
-        img-alt="Image"
-        img-top>
+        >
       <h4 slot="header">Hello World</h4>
         <b-card-body>
             <p class="card-text">
@@ -58,9 +54,7 @@
     </b-card>
     <b-card no-body
         style="max-width: 20rem;"
-        img-src="https://placekitten.com/380/199"
-        img-alt="Image"
-        img-top>
+        >
       <h4 slot="header">读书</h4>
         <b-card-body>
             <p class="card-text">
@@ -83,11 +77,69 @@
                     alt="Image"
                     bottom></b-card-img>
     </b-card>
+    <b-card no-body
+        style="max-width: 20rem;"
+        v-for="card in cards"
+        :key="card.id"
+        :img-src="card.headImg"
+        img-top>
+      <h4 slot="header">{{card.header}}</h4>
+      <b-card-body>
+        <p class="card-text">{{card.subHeader}}</p>
+      </b-card-body>
+      <b-list-group flush>
+        <b-list-group-item v-for="li in card.listItems" :key="li.text">
+        <a class="card-link" :href="li.linkTo">{{li.text}}</a>
+        </b-list-group-item>
+      </b-list-group>
+      <b-card-body>
+        <a :href="card.link" class="card-link">More</a>
+      </b-card-body>
+      <b-card-footer>{{card.footer}}</b-card-footer>
+      <b-card-img :src="card.footImg"
+                  alt="Image"
+                  bottom></b-card-img>
+    </b-card>
     </b-card-group>
   </div>
 </template>
 <script>
-
+import fetchJsonp from 'fetch-jsonp'
+export default {
+  data () {
+    return {
+      cards: [
+        {
+          headImg: '',
+          header: 'Read',
+          subHeader: 'some quick example text ro build',
+          listItems: [{text: 'item0', linkTo: '#/note'}, {text: 'item1', linkTo: '#/note'}, {text: 'item2', linkTo: '#/note'}],
+          link: '#/track',
+          footer: 'This is footer',
+          footImg: 'https://placekitten.com/480/210'
+        },
+        {
+          headImg: 'https://placekitten.com/380/199',
+          header: 'Read',
+          subHeader: 'some quick example text ro build',
+          listItems: [{text: 'item0', linkTo: '#/note'}, {text: 'item1', linkTo: '#/note'}],
+          link: '#/track',
+          footer: 'This is footer',
+          footImg: 'https://placekitten.com/480/210'
+        }
+      ]
+    }
+  },
+  created () {
+    // https://www.weibo.com/p/1005051263905037/wenzhang
+    // https://www.weibo.com/ttarticle/p/show?id=2309404194775615067422
+    fetchJsonp('https://www.google.com', {timeout: 6000}).then(function (response) {
+      console.log('response')
+    }).catch(function (ex) {
+      console.log('parsing failed', ex)
+    })
+  }
+}
 </script>
 <style>
 
