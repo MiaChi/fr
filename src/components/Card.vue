@@ -23,7 +23,7 @@
                class="card-link">Another link</a>
         </b-card-body>
         <b-card-footer>This is a footer</b-card-footer>
-        <b-card-img src="https://placekitten.com/480/210"
+        <b-card-img src="https://placekitten.com/480/204"
                     alt="Image"
                     bottom></b-card-img>
       </b-card>
@@ -48,7 +48,7 @@
                class="card-link">Another link</a>
         </b-card-body>
         <b-card-footer>This is a footer</b-card-footer>
-        <b-card-img src="https://placekitten.com/480/210"
+        <b-card-img src="https://placekitten.com/480/200"
                     alt="Image"
                     bottom></b-card-img>
     </b-card>
@@ -73,7 +73,7 @@
                class="card-link">Another link</a>
         </b-card-body>
         <b-card-footer>This is a footer</b-card-footer>
-        <b-card-img src="https://placekitten.com/480/210"
+        <b-card-img src="https://placekitten.com/480/201"
                     alt="Image"
                     bottom></b-card-img>
     </b-card>
@@ -141,7 +141,6 @@ export default {
     //   console.log('parsing failed', ex)
     // })
     fetch('http://localhost:3000').then(function (sres) {
-      console.log(sres)
       return sres.json()
       // here need use arrow function to make 'this' work as expected
     }).then((sjson) => {
@@ -157,7 +156,7 @@ export default {
         listItems: listItems,
         link: 'https://weibo.com/p/1005051263905037/wenzhang',
         footer: 'Don\'t worry, be happy',
-        footImg: 'https://placekitten.com/480/210'
+        footImg: 'https://placekitten.com/480/199'
       })
     })
   }
