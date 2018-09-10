@@ -104,39 +104,61 @@
   </div>
 </template>
 <script>
-import fetchJsonp from 'fetch-jsonp'
+// import fetchJsonp from 'fetch-jsonp'
 export default {
   data () {
     return {
-      cards: [
-        {
-          headImg: '',
-          header: 'Read',
-          subHeader: 'some quick example text ro build',
-          listItems: [{text: 'item0', linkTo: '#/note'}, {text: 'item1', linkTo: '#/note'}, {text: 'item2', linkTo: '#/note'}],
-          link: '#/track',
-          footer: 'This is footer',
-          footImg: 'https://placekitten.com/480/210'
-        },
-        {
-          headImg: 'https://placekitten.com/380/199',
-          header: 'Read',
-          subHeader: 'some quick example text ro build',
-          listItems: [{text: 'item0', linkTo: '#/note'}, {text: 'item1', linkTo: '#/note'}],
-          link: '#/track',
-          footer: 'This is footer',
-          footImg: 'https://placekitten.com/480/210'
-        }
-      ]
+      cards: []
+    // cards: this.$store.state.cards
+    //   cards: [
+    //     {
+    //       headImg: '',
+    //       header: 'Read',
+    //       subHeader: 'some quick example text ro build',
+    //       listItems: [{text: 'item0', linkTo: '#/note'}, {text: 'item1', linkTo: '#/note'}, {text: 'item2', linkTo: '#/note'}],
+    //       link: '#/track',
+    //       footer: 'This is footer',
+    //       footImg: 'https://placekitten.com/480/210'
+    //     },
+    //     {
+    //       headImg: 'https://placekitten.com/380/199',
+    //       header: 'Read',
+    //       subHeader: 'some quick example text ro build',
+    //       listItems: [{text: 'item0', linkTo: '#/note'}, {text: 'item1', linkTo: '#/note'}],
+    //       link: '#/track',
+    //       footer: 'This is footer',
+    //       footImg: 'https://placekitten.com/480/210'
+    //     }
+    //   ]
     }
   },
   created () {
     // https://www.weibo.com/p/1005051263905037/wenzhang
     // https://www.weibo.com/ttarticle/p/show?id=2309404194775615067422
-    fetchJsonp('https://www.google.com', {timeout: 6000}).then(function (response) {
-      console.log('response')
-    }).catch(function (ex) {
-      console.log('parsing failed', ex)
+    // fetchJsonp('https://m.weibo.cn/api/container/getIndex?containerid=2303190002_445_1263905037_WEIBO_ARTICLE_LIST_DETAIL').then(function (response) {
+    //   console.log('response')
+    // }).catch(function (ex) {
+    //   console.log('parsing failed', ex)
+    // })
+    fetch('http://localhost:3000').then(function (sres) {
+      console.log(sres)
+      return sres.json()
+      // here need use arrow function to make 'this' work as expected
+    }).then((sjson) => {
+      console.log(sjson)
+      let listItems = []
+      sjson.forEach(function (item) {
+        listItems.push({text: item.title, linkTo: item.href})
+      })
+      this.cards.push({
+        headImg: '',
+        header: 'Travels',
+        subHeader: 'It is a beautiful world',
+        listItems: listItems,
+        link: 'https://weibo.com/p/1005051263905037/wenzhang',
+        footer: 'Don\'t worry, be happy',
+        footImg: 'https://placekitten.com/480/210'
+      })
     })
   }
 }
