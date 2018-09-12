@@ -163,5 +163,8 @@ export default {
 }
 </script>
 <style>
-
+.card-columns {
+  column-count: 4;
+  -webkit-column-count: 4;
+}
 </style>
