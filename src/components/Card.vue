@@ -58,11 +58,7 @@
       <h4 slot="header">读书</h4>
         <b-card-body>
             <p class="card-text">
-<<<<<<< HEAD
               很有意思
-=======
-                REMOTE • REWORK • Sunday Sketching
->>>>>>> 2035205d1044369f866b5333e813e8c499d681c7
             </p>
         </b-card-body>
         <b-list-group flush>
