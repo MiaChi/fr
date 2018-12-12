@@ -30,10 +30,10 @@
     <b-card no-body
         style="max-width: 20rem;"
         >
-      <h4 slot="header">Hello World</h4>
+      <h4 slot="header"><a href="#/track">Hello World</a></h4>
         <b-card-body>
             <p class="card-text">
-                2:Some quick example text to build on the card title and make up the bulk of the card's content.
+                Some quick example text to build on the card title and make up the bulk of the card's content.
             </p>
         </b-card-body>
         <b-list-group flush>
@@ -58,7 +58,11 @@
       <h4 slot="header">读书</h4>
         <b-card-body>
             <p class="card-text">
+<<<<<<< HEAD
               很有意思
+=======
+                REMOTE • REWORK • Sunday Sketching
+>>>>>>> 2035205d1044369f866b5333e813e8c499d681c7
             </p>
         </b-card-body>
         <b-list-group flush>
@@ -90,7 +94,7 @@
       </b-card-body>
       <b-list-group flush>
         <b-list-group-item v-for="li in card.listItems" :key="li.text">
-        <a class="card-link" :href="li.linkTo">{{li.text}}</a>
+        <a class="card-link a-article" :href="li.linkTo">{{li.text}}</a>
         </b-list-group-item>
       </b-list-group>
       <b-card-body>
@@ -165,5 +169,11 @@ export default {
 }
 </script>
 <style>
-
+.card-columns {
+  column-count: 4;
+  -webkit-column-count: 4;
+}
+.a-article {
+  color: black;
+}
 </style>

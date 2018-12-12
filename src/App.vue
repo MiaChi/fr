@@ -1,6 +1,10 @@
 <template>
-  <div id="app">
+  <div id="app" >
   <div>
+<<<<<<< HEAD
+=======
+    <!-- <h2>故 <span style="color:#DBDDE0">•</span> 事</h2> -->
+>>>>>>> 2035205d1044369f866b5333e813e8c499d681c7
     <h2>故 <img src="/static/favicon.png" class="icon"/> 事</h2>
     <h6><span style="color:grey;font-size:12px;">发生的都是故事</span></h6>
     <hr/>
